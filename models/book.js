@@ -1,16 +1,13 @@
 var mongoose = require('mongoose');
 
-var userSchema = new mongoose.Schema({ 
-    email: { type: String, unique: true, lowercase: true},
-    password: String,
-    username: String,
-    gender: { 
-        type: String,
-        enum: ['MALE', 'FEMALE']
-    },
-    phone: Number 
+var bookSchema = new mongoose.Schema({ 
+    title: String,
+    author: String,
+    publisher: String,
+    price: Number
+    
 },
 { timestamps: true }
 );
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Book', bookSchema);

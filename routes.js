@@ -3,11 +3,8 @@ router = express.Router();
 
 var bookCtrl = require('./book-controller');
 
-router.get('/hello', bookCtrl.getWorld);
-
-router.get('/hello/:foo/:bar', bookCtrl.getWorldParams);
-
-router.post('/hello', bookCtrl.postWorld);
+router.get('/books', bookCtrl.getBooks);
+router.post('/books', bookCtrl.createBook);
 
 
 module.exports = router;

@@ -1,15 +1,21 @@
-exports.getWorld = function(req, res){
-    res.json({result: 'Hello World from Controller'});
-}
+var Book = require('./models/book')
 
-exports.getWorldParams = function(req, res) {
-  res.json({message: 'Hello BScBest!', data: [
-    req.params.foo,
-    req.params.bar
-]});
+exports.createBook = function(req, res) { 
+    var newbook = new Book(req.body);
+    newbook.save(function (err, book) { 
+        if (err) { 
+            res.status (400).json(err);
+        }
 
+        res.json(book); 
+});
 };
 
-exports.postWorld = function(req, res) {
-    res.json({result: 'Post was sent', data: req.body});
+exports.getBooks = function(req, res) {
+  Book.find({}, function (err, books) {
+    if (err) {
+      res.status(400).json(err); 
+    } 
+    res.json(books);
+  }); 
 };
