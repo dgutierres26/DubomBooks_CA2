@@ -7,11 +7,22 @@ mongoose = require('mongoose');
 
 var app = express();
 var port = 8000;
+app.set('view engine', 'ejs')
+
+
+app.use(function(req, res, next){
+    res.locals.path = req.path
+    next()
+})
+
 
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
-app.use(require('./routes'));
-
+app.use(express.static('public'));
+app.use('/books', require('./routes'));
+app.get('/', function(req, res){
+    res.redirect('/books')
+});
 
 app.listen(port, function(err){
     console.log('Listening on port: ' + port);

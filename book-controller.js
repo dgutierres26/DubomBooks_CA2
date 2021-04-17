@@ -16,6 +16,16 @@ exports.getBooks = function(req, res) {
     if (err) {
       res.status(400).json(err); 
     } 
-    res.json(books);
+    
+    res.render('index', {data: books})
   }); 
 };
+
+exports.deleteBook = function(req, res){
+    const {array} = req.body
+    if(array){
+        console.log('==============')
+        console.log(array)
+    }
+    res.redirect('/index')
+}

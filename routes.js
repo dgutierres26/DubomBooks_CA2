@@ -3,8 +3,8 @@ router = express.Router();
 
 var bookCtrl = require('./book-controller');
 
-router.get('/books', bookCtrl.getBooks);
-router.post('/books', bookCtrl.createBook);
-
+router.get('/', bookCtrl.getBooks);
+router.post('/', bookCtrl.createBook);
+router.delete('/', bookCtrl.deleteBook);
 
 module.exports = router;
