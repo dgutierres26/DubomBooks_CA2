@@ -22,10 +22,14 @@ exports.getBooks = function(req, res) {
 };
 
 exports.deleteBook = function(req, res){
-    const {array} = req.body
+    const array = req.body
     if(array){
         console.log('==============')
-        console.log(array)
+        for(let i = 0; i < array.length; i++){
+             console.log(array[i])
+        }
+        
+       
     }
-    res.redirect('/index')
+    res.json('successful')
 }

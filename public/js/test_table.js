@@ -1,3 +1,17 @@
+// Example POST method implementation:
+async function deleteData(url = '', data = {}) {
+    // Default options are marked with *
+    const response = await fetch(url, {
+        method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
+        headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: JSON.stringify(data) // body data type must match "Content-Type" header
+    });
+    return response.json(); // parses JSON response into native JavaScript objects
+}
+
 document.getElementById('test').addEventListener('click', function () {
     const booksEl = document.getElementsByClassName('select')
     array = []
@@ -14,16 +28,4 @@ document.getElementById('test').addEventListener('click', function () {
     }
 })
 
-// Example POST method implementation:
-async function deleteData(url = '', data = {}) {
-    // Default options are marked with *
-    const response = await fetch(url, {
-        method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
-        headers: {
-            'Content-Type': 'application/json'
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: JSON.stringify(data) // body data type must match "Content-Type" header
-    });
-    return response.json(); // parses JSON response into native JavaScript objects
-}
+
