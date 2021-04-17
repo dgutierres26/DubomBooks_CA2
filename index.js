@@ -17,7 +17,7 @@ app.listen(port, function(err){
     console.log('Listening on port: ' + port);
 });
 
-const dbURI = "mongodb://localhost/test";
+const dbURI = "mongodb+srv://diego:imgood12021985@cluster0.bpddp.mongodb.net/dubombooks?retryWrites=true&w=majority";
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
         .then((result) => console.log('MongoDB is successfully connected'))

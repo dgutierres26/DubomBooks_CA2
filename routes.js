@@ -1,13 +1,13 @@
 const express = require('express'),
 router = express.Router();
 
-var itemCtrl = require('./item-controller');
+var bookCtrl = require('./book-controller');
 
-router.get('/hello', itemCtrl.getWorld);
+router.get('/hello', bookCtrl.getWorld);
 
-router.get('/hello/:foo/:bar', itemCtrl.getWorldParams);
+router.get('/hello/:foo/:bar', bookCtrl.getWorldParams);
 
-router.post('/hello', itemCtrl.postWorld);
+router.post('/hello', bookCtrl.postWorld);
 
 
 module.exports = router;
