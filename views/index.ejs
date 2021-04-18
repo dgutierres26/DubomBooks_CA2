@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/dubombook.css">
+    <link rel="stylesheet" href="./css/dubombook.css">
     <title>DubomBooks</title>
 
 </head>
@@ -14,7 +14,7 @@
 
     <% 
     
-        const books = data ? data : null
+       const books = data ? data : null
        console.log(books)
     %>
 
@@ -27,8 +27,8 @@
                     <h1 class="mt-5">Welcome to Dubom Books</h1>
                     <p>Select your book below and enjoy</p>
                 </div>
-                <!-- <div id="table" class="container3 table-hover text-left"></div> -->
-                <table>
+                <!-- <div id="table" class="container3 table-hover text-left"> -->
+                <table id="table" class="table-hover text-center">
                     <tr>
                         <th>Select</th>
                         <th>Genre</th>
@@ -42,7 +42,7 @@
                             <tr>
                                 <!-- <td><%= books[i].genre %></td> -->
                                 <td><input class="select" type="checkbox" name="" id="" data-book="<%= books[i]._id %>"></td>
-                                <td> - </td>
+                                <td><%= books[i].genre %></td>
                                 <td><%= books[i].title %></td>
                                 <td><%= books[i].author %></td>
                                 <td><%= books[i].publisher %></td>
