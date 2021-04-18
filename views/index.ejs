@@ -28,7 +28,7 @@
                     <p>Select your book below and enjoy</p>
                 </div>
                 <!-- <div id="table" class="container3 table-hover text-left"> -->
-                <table id="table" class="table-hover text-center">
+                <table id="table" class="table-hover text-center table-bordered table-striped">
                     <tr>
                         <th>Select</th>
                         <th>Genre</th>
@@ -40,7 +40,7 @@
                     <% if(books){ %>
                         <% for(let i= 0; i < books.length; i++){ %>
                             <tr>
-                                <!-- <td><%= books[i].genre %></td> -->
+                               
                                 <td><input class="select" type="checkbox" name="" id="" data-book="<%= books[i]._id %>"></td>
                                 <td><%= books[i].genre %></td>
                                 <td><%= books[i].title %></td>
@@ -54,7 +54,7 @@
 
                 </table>
 
-            <button id="test">test</button>
+            <!-- <button id="test">test</button> -->
             </div>
             <div class="input-group mb-2 mt-2 col-lg-12">
                 <div class="input-group-prepend">
@@ -83,7 +83,7 @@
                     </div>
                 </form>
                 <!-- Delete button -->
-                <button id="delete" class="btn1 btn-danger btn-block mt-3">Delete</button>
+                <button id="test" class="btn1 btn-danger btn-block mt-3">Delete</button>
             </div>
         </div>
     </div>

@@ -64,10 +64,13 @@ p{
     border-collapse: collapse;
     border-radius: 5px;
     margin-top: 0%;
+    
+    
 }
 table{
     width: 101%;
 }
+
 th {
     text-align: center;
     border-color: #000000;
