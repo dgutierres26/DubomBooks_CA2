@@ -63,27 +63,27 @@
                 <input type="text" class="form-control" aria-label="Default"
                     aria-describedby="inputGroup-sizing-default" readonly="readonly" id="subtotal" value="0.00">
                 <div class="input-group-prepend col-lg-1">
-                    <button class="btn btn-outline-secondary" type="button" id="checkout">Checkout</button>
+                    <button class="btn btn-outline-secondary" type="button" id="calcBill">Checkout</button>
                 </div>
             </div>
             <!--Add new book-->
             <div class="container2 col-lg-4 order-1">
-                <form enctype="application/json" action="/post/json" method="post">
+                <form enctype="application/json" action="/books" method="POST">
                     <div class="form-group">
-                        <select class="form-control" name="sec_n">
-                            <option value="0">Action Books</option>
-                            <option value="1">Comedy Books</option>
-                            <option value="2">Horror Books</option>
+                        <select class="form-control" name="genre">
+                            <option value="Action">Action Books</option>
+                            <option value="Comedy">Comedy Books</option>
+                            <option value="Horror">Horror Books</option>
                         </select>
                         <input class="form-control mt-2" type="text" name="title" placeholder="Title">
                         <input class="form-control mt-2" type="text" name="author" placeholder="Author">
                         <input class="form-control mt-2" type="text" name="publisher" placeholder="Publisher">
                         <input class="form-control mt-2" type="text" name="price" placeholder="Price">
-                        <button type="submit" class="btn2 btn-primary btn-block mt-3">Submit</button>
+                        <button type="submit" class="btn2 btn-primary btn-block mt-3" onclick="function1()" value="Save">Submit</button>
                     </div>
                 </form>
                 <!-- Delete button -->
-                <button id="test" class="btn1 btn-danger btn-block mt-3">Delete</button>
+                <button id="delete" class="btn1 btn-danger btn-block mt-3">Delete</button>
             </div>
         </div>
     </div>
@@ -96,9 +96,15 @@
     <!-- <script src="./js/table.js"></script> -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-    <!-- <script src="./js/tablefunctions.js"></script> -->
-    <script src="./js/test_table.js"></script>
+    <script src="./js/table_functions.js"></script>
+    <script src="./js/book_table.js"></script>
+    <script>
 
+        function function1(){
+            alert ("Saved successfully")
+        }
+    </script>
+    
 
 </body>
 

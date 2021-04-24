@@ -7,7 +7,8 @@ exports.createBook = function(req, res) {
             res.status (400).json(err);
         }
 
-        res.json(book); 
+        // res.json(book); 
+        res.redirect('/');
 });
 };
 
@@ -23,23 +24,18 @@ exports.getBooks = function(req, res) {
 
 exports.deleteBook = function(req, res){
     const array = req.body
+     Book.findByIdAndRemove(array, function (err, books) {
       if(array){
         console.log('===============================================')
         for(let i = 0; i < array.length; i++){
              console.log(array[i])
+       
             
         }
         
        
     }
-    res.json('successful')
+    res.json('successful');
+    
+    });
 };
-
-// exports.deleteBook = function(req, res) {
-//   Book.findByIdAndRemove({_id: req.params.id}, function (err, books) {
-//     if (array) {
-//       res.status(400).json(err); 
-//     } 
-//     res.json(books);
-//   }); 
-// };

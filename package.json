@@ -20,6 +20,7 @@
   "homepage": "https://github.com/dgutierres26/DubomBooks_CA2#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "body-parse": "^0.1.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "ejs": "^3.1.6",
