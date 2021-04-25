@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require ('express'),
 morgan = require ('morgan'),
 cors = require('cors'),
@@ -29,7 +31,7 @@ app.listen(port, function(err){
     console.log('Listening on port: ' + port);
 });
 
-const dbURI = "mongodb+srv://diego:imgood12021985@cluster0.bpddp.mongodb.net/dubombooks?retryWrites=true&w=majority";
+const dbURI = process.env.MONGO_URL;
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
         .then((result) => console.log('MongoDB is successfully connected'))
