@@ -12,7 +12,7 @@ exports.updateBook = function(req, res) {
         }
 
         res.json(book); 
-        // res.redirect('/');
+       
 });
 };
 
@@ -24,7 +24,7 @@ exports.createBook = function(req, res) {
         }
 
         res.json(book); 
-        // res.redirect('/');
+       
 });
 };
 

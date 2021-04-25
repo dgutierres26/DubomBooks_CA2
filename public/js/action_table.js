@@ -8,6 +8,7 @@ let edit = document.querySelectorAll('button.edit')
 for(let i = 0; i < edit.length; i++){
      edit[i].addEventListener('click' , function(){
         editRequest(edit[i])
+        
 
     })
 }
@@ -21,7 +22,7 @@ function editRequest(el){
     price.value =`${el.dataset.price}`
 }
 
-// Example POST method implementation:
+// PUT method implementation:
 async function updateData(url = '', data = {}) {
     // Default options are marked with *
     const response = await fetch(url, {
@@ -35,7 +36,7 @@ async function updateData(url = '', data = {}) {
     return response.json(); // parses JSON response into native JavaScript objects
 }
 
-// Example POST method implementation:
+// POST method implementation:
 async function submitData(url = '', data = {}) {
     // Default options are marked with *
     const response = await fetch(url, {

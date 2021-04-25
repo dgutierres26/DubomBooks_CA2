@@ -1,4 +1,4 @@
-// Example POST method implementation:
+// DELETE method implementation:
 async function deleteData(url = '', data = {}) {
     // Default options are marked with *
     const response = await fetch(url, {
@@ -23,7 +23,7 @@ document.getElementById('delete').addEventListener('click', function () {
     if (array.length > 0) {
         deleteData('books', array)
             .then(data => {
-                console.log(data); // JSON data parsed by `data.json()` call
+                console.log(data); 
                 window.location.reload()
             })
             .catch(err => console.log(err))
