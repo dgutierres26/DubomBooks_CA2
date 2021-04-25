@@ -35,15 +35,17 @@ function calcBill(){
     
     for (const prop in rows){
         const row = rows [prop];
-        
+        console.log(row.nodeType)
         if (row.nodeType == 1 ){
-            const td = row.firstChild;
-            const checkbox = row.firstChild;
-            console.log(checkbox)
+            const td = row.children[0];
+        
+            const checkbox = td.firstChild;
+            // console.log(row)
 
             if (checkbox.checked){
-                const price = row.lastChild.innerText.trim();
-                console.log(price);
+                const size = row.children.length - 1
+                const price = row.children[size].innerText.trim()
+                console.log(row.children[size]);
                 result += parseFloat(price);                
             }
         }

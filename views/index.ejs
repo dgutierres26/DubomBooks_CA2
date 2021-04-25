@@ -31,6 +31,7 @@
                 <table id="table" class="table-hover text-center table-bordered table-striped">
                     <tr>
                         <th>Select</th>
+                        <th>Edit</th>
                         <th>Genre</th>
                         <th>Title</th>
                         <th>Author</th>
@@ -41,12 +42,19 @@
                         <% for(let i= 0; i < books.length; i++){ %>
                             <tr>
                                
-                                <td><input class="select" type="checkbox" name="" id="" data-book="<%= books[i]._id %>"></td>
-                                <td><%= books[i].genre %></td>
-                                <td><%= books[i].title %></td>
-                                <td><%= books[i].author %></td>
-                                <td><%= books[i].publisher %></td>
-                                <td><%= books[i].price %></td>
+                                <td><input class="select" type="checkbox" data-book="<%= books[i]._id %>"></td>
+                                <td><button class="edit btn2 btn-primary btn-block mt-3"
+                                    data-id="<%= books[i]._id %>"
+                                    data-genre="<%= books[i].genre %>"
+                                    data-title="<%= books[i].title %>"
+                                    data-author="<%= books[i].author %>"
+                                    data-publisher="<%= books[i].publisher %>"
+                                    data-price="<%= books[i].price %>" >Edit</button></td>
+                                <td ><%= books[i].genre %></td>
+                                <td ><%= books[i].title %></td>
+                                <td ><%= books[i].author %></td>
+                                <td ><%= books[i].publisher %></td>
+                                <td ><%= books[i].price %></td>
                             </tr>
 
                         <% } %>
@@ -63,23 +71,25 @@
                 <input type="text" class="form-control" aria-label="Default"
                     aria-describedby="inputGroup-sizing-default" readonly="readonly" id="subtotal" value="0.00">
                 <div class="input-group-prepend col-lg-1">
-                    <button class="btn btn-outline-secondary" type="button" id="calcBill">Checkout</button>
+                    <button class="btn btn-outline-secondary" type="button" id="checkout">Checkout</button>
                 </div>
             </div>
             <!--Add new book-->
             <div class="container2 col-lg-4 order-1">
-                <form enctype="application/json" action="/books" method="POST">
+                <form >
                     <div class="form-group">
-                        <select class="form-control" name="genre">
+                        <select class="form-control" id="genre">
                             <option value="Action">Action Books</option>
                             <option value="Comedy">Comedy Books</option>
                             <option value="Horror">Horror Books</option>
                         </select>
-                        <input class="form-control mt-2" type="text" name="title" placeholder="Title">
-                        <input class="form-control mt-2" type="text" name="author" placeholder="Author">
-                        <input class="form-control mt-2" type="text" name="publisher" placeholder="Publisher">
-                        <input class="form-control mt-2" type="text" name="price" placeholder="Price">
-                        <button type="submit" class="btn2 btn-primary btn-block mt-3" onclick="function1()" value="Save">Submit</button>
+                        <input class="form-control mt-2" type="text" id="title" placeholder="Title">
+                        <input class="form-control mt-2" type="text" id="author" placeholder="Author">
+                        <input class="form-control mt-2" type="text" id="publisher" placeholder="Publisher">
+                        <input class="form-control mt-2" type="text" id="price" placeholder="Price">
+                        <input type="hidden" id="bookId">
+                        <button  class="btn2 btn-primary btn-block mt-3" id="submit">Submit</button>
+                        <button  class="btn2 btn-primary btn-block mt-3" id="update">Update</button>
                     </div>
                 </form>
                 <!-- Delete button -->
@@ -98,13 +108,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="./js/table_functions.js"></script>
     <script src="./js/book_table.js"></script>
-    <script>
-
-        function function1(){
-            alert ("Saved successfully")
-        }
-    </script>
-    
+    <script src="./js/action_table.js"></script>
+       
 
 </body>
 

@@ -24,7 +24,9 @@ document.getElementById('delete').addEventListener('click', function () {
         deleteData('books', array)
             .then(data => {
                 console.log(data); // JSON data parsed by `data.json()` call
-            });
+                window.location.reload()
+            })
+            .catch(err => console.log(err))
     }
 })
 

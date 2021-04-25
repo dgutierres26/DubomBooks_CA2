@@ -1,4 +1,20 @@
+var mongoose = require('mongoose');
 var Book = require('./models/book')
+
+exports.updateBook = function(req, res) { 
+    const { genre, title, author, publisher, price } = req.body
+    const {id} = req.body
+    console.log({ genre, title, author, publisher, price })
+    var newbook = new Book({ genre, title, author, publisher, price });
+    mongoose.model('Book').findByIdAndUpdate(id, { genre, title, author, publisher, price }, function (err, book) { 
+        if (err) { 
+            res.status (400).json(err);
+        }
+
+        res.json(book); 
+        // res.redirect('/');
+});
+};
 
 exports.createBook = function(req, res) { 
     var newbook = new Book(req.body);
@@ -7,8 +23,8 @@ exports.createBook = function(req, res) {
             res.status (400).json(err);
         }
 
-        // res.json(book); 
-        res.redirect('/');
+        res.json(book); 
+        // res.redirect('/');
 });
 };
 
