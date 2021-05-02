@@ -5,6 +5,7 @@ let publisher = document.getElementById('publisher')
 let price = document.getElementById('price')
 let id = document.getElementById('bookId')
 let edit = document.querySelectorAll('button.edit')
+    console.log(edit)
 for(let i = 0; i < edit.length; i++){
      edit[i].addEventListener('click' , function(){
         editRequest(edit[i])
