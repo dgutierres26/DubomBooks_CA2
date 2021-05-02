@@ -27,7 +27,7 @@ app.get('/', function(req, res){
     res.redirect('/books')
 });
 
-app.listen(port, function(err){
+app.listen(process.env.PORT || port, function(err){
     console.log('Listening on port: ' + port);
 });
 
