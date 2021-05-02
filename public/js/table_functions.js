@@ -1,4 +1,3 @@
-// const bestsellerEl = document.getElementById("bestseller");
 const checkoutEl = document.getElementById("checkout");
 const subtotal = document.getElementById("subtotal");
 
